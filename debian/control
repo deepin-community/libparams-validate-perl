@@ -1,0 +1,40 @@
+Source: libparams-validate-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: gregor herrmann <gregoa@debian.org>,
+           Damyan Ivanov <dmn@debian.org>,
+           Florian Schlichting <fsfs@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper-compat (= 13),
+               libmodule-build-perl:native,
+               libmodule-implementation-perl <!nocheck>,
+               libreadonly-perl <!nocheck>,
+               libtest-fatal-perl <!nocheck>,
+               libtest-requires-perl <!nocheck>,
+               libtest-taint-perl <!nocheck>,
+               perl-xs-dev,
+               perl:native
+Standards-Version: 4.5.0
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libparams-validate-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libparams-validate-perl.git
+Homepage: https://metacpan.org/release/Params-Validate
+Rules-Requires-Root: no
+
+Package: libparams-validate-perl
+Architecture: any
+Multi-Arch: same
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         ${shlibs:Depends},
+         libmodule-implementation-perl
+Description: Perl module to validate parameters to Perl method/function calls
+ Params::Validate is a Perl module providing a flexible way to validate method
+ and function call parameters. The validation can be as simple as checking for
+ the presence of required parameters, or more complex, like validating object
+ classes (via isa) or capabilities (via can) and checking parameter types. It
+ also provides extensibility through customized validation callbacks.
+ .
+ The module has been designed to work equally well with positional or named
+ parameters (via a hash or hash reference) and includes experimental support
+ for attributes (see Attribute::Params::Validate for details).
